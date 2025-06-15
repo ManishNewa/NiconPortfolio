@@ -24,7 +24,7 @@
             v-for="experience in filteredExperiences"
             :key="experience"
             class="mb-8 experience-item p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition cursor-pointer"
-            onclick="openExperienceModal(1)"
+            @click="openExperienceModal(experience)"
           >
             <div class="flex flex-col md:flex-row">
               <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
@@ -55,11 +55,20 @@
         </div>
       </div>
     </div>
+
+    <!-- Experience Modal -->
+    <ExperienceModal
+      v-if="experienceModalOpen"
+      :experience="activeExperience"
+      @close-modal="closeExperienceModal"
+    />
   </section>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import ExperienceModal from '../modals/ExperienceModal.vue'
+
+import { ref, computed } from 'vue'
 
 const experiences = [
   {
@@ -109,7 +118,20 @@ const experiences = [
   },
 ]
 
+const activeExperience = ref(null)
+const experienceModalOpen = ref(false)
+
 const filteredExperiences = computed(() => {
   return experiences.filter((experience) => experience.visible)
 })
+
+const openExperienceModal = (experience) => {
+  experienceModalOpen.value = true
+  activeExperience.value = experience
+}
+
+const closeExperienceModal = () => {
+  experienceModalOpen.value = false
+  activeExperience.value = null
+}
 </script>
