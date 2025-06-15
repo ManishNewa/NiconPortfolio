@@ -93,6 +93,11 @@ const experiences = [
       'Led creative advertising efforts by conceptualizing and designing impactful visual content using tools like Figma, After Effects, and Photoshop. Successfully managed social media accounts, particularly Facebook, ensuring effective and timely ad campaigns that aligned with brand goals.',
     skills: ['Content Creation', 'After Effects', 'Video Editing', 'Graphics Design'],
     visible: true,
+    responsibilities: [
+      'Created advertisement concepts and implemented them.',
+      'Using of creative tools like figma, after-effects, photoshop, etc to create visually stunning graphic designs for the company.',
+      'Handled the social media accounts like facebook for proper and timely ads run.',
+    ],
   },
   {
     title: 'Advertisement Advisor/ Graphic Designer (Freelance)',
@@ -102,6 +107,12 @@ const experiences = [
       "Initiated the company's marketing efforts by creating original advertisement concepts and designing its first brand logo. Developed a range of promotional materials including banners, posters, and social media content, laying the foundation for a consistent and engaging marketing presence.",
     skills: ['Logo Design', 'Banners Creation', 'Posters Design', 'Advertisements'],
     visible: true,
+    responsibilities: [
+      'Created advertisement concepts and used them as a initial process of marketing.',
+      'Designed the first logo for the company.',
+      'Designed banners, posters and other advertisement/marketing materials.',
+      'Created concepts of social media marketing for the company and its work which raised leads and profits.',
+    ],
   },
   {
     title: 'Motion Graphics Designer',
@@ -111,6 +122,12 @@ const experiences = [
       'Produced high-quality videos, including motion graphics and content tailored for social media. Collaborated closely with the social media and UI/graphics teams to align visual storytelling with brand identity. Contributed to multiple SaaS products like KrispCall, Fenced.ai, MobileSpy, and timeTracko, enhancing their marketing impact through compelling motion design.',
     skills: ['Animation', 'Video Editing', 'Graphics Design', 'Social Media Posts'],
     visible: true,
+    responsibilities: [
+      'Created at least 5-10 videos per month which include motion graphics and social media posts.',
+      'Collaborated daily with the social media marketing team in making visually stunning motion graphics.',
+      'Worked in SaaS Products like KrispCall, Fenced.ai, MobileSpy, timeTracko.',
+      'Collaboration with the graphics and UI team for a better understanding of brands for creating a more impactful feel for the motion graphics.',
+    ],
   },
   {
     title: 'Creative Graphics Designer',
@@ -120,6 +137,14 @@ const experiences = [
       'Transformed design briefs into impactful visuals by conceptualizing and executing creative ideas within set timelines and budgets. Produced illustrations, logos, and graphic assets using industry-standard software, collaborating with copywriters and creative directors to deliver on-brand, engaging final designs. Ensured quality through iterative feedback, consistently aligning visuals with project goals and brand identity.',
     skills: ['Brochoure Design', 'Posters', 'Banners', 'Logos', 'Social Media Posts'],
     visible: true,
+    responsibilities: [
+      'Study design briefs and determine requirements',
+      'Schedule projects and define budget constraints',
+      'Conceptualize visuals based on requirements, prepare rough drafts and present ideas',
+      'Develop illustrations, logos and other designs using software.',
+      'Work with copywriters and creative director to produce final design',
+      'Amend designs after feedback and ensure final graphics and layouts are visually appealing and on-brand.',
+    ],
   },
 ]
 
