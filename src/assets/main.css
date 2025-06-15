@@ -1,4 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+.text-primary {
+  color: #3a86ff;
+}
 
-
+.text-secondary {
+  color: #8338ec;
+}

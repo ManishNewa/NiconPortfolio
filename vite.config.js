@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
+import autoprefixer from 'autoprefixer'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
@@ -11,6 +12,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     tailwindcss(),
+    autoprefixer()
   ],
   resolve: {
     alias: {
