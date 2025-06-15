@@ -39,7 +39,7 @@
               </div>
               <div class="md:w-1/2 md:pl-8">
                 <p class="text-gray-700">
-                  {{ experience.description }}
+                  {{ experience.truncatedDescription }}
                 </p>
                 <div class="mt-2 flex flex-wrap gap-2">
                   <span
@@ -78,6 +78,11 @@ const experiences = [
     description:
       'Result-driven digital marketer with hands-on experience in managing social media, content creation, and paid advertising. Focused on building brand presence, driving engagement, and delivering measurable results across digital platforms.',
     skills: ['Social Media Management', 'Meta Suite', 'Content Creation'],
+    projects: [],
+    responsibilities: [
+      'Created compelling and targeted content tailored to audience interests, boosting growth and enhancing customer interaction.',
+      'Collaborated with cross-functional teams to develop compelling contents for the company website resulting in increased brand visibility and audience engagement',
+    ],
     visible: true,
   },
   {
@@ -118,11 +123,25 @@ const experiences = [
   },
 ]
 
+const wordLimit = 15
 const activeExperience = ref(null)
 const experienceModalOpen = ref(false)
 
 const filteredExperiences = computed(() => {
-  return experiences.filter((experience) => experience.visible)
+  return experiences
+    .filter((experience) => experience.visible)
+    ?.map((experience) => {
+      const words = experience.description.split(' ')
+      const truncatedDescription =
+        words.length > wordLimit
+          ? words.slice(0, wordLimit).join(' ') + '...'
+          : experience.description
+
+      return {
+        ...experience,
+        truncatedDescription,
+      }
+    })
 })
 
 const openExperienceModal = (experience) => {
