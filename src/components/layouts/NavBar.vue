@@ -82,4 +82,26 @@
   </nav>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const anchors = document.querySelectorAll('a[href^="#"]')
+
+  anchors.forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+
+      const targetId = this.getAttribute('href')
+      const targetElement = document.querySelector(targetId)
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80, // Adjust offset if you have a fixed header
+          behavior: 'smooth',
+        })
+      }
+    })
+  })
+})
+</script>
