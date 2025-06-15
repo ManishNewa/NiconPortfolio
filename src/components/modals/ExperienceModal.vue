@@ -39,7 +39,7 @@
           </div>
           <!-- Projects -->
           <div>
-            <div v-if="experienceDetails.projects.length">
+            <div v-if="experienceDetails.projects && experienceDetails.projects.length">
               <h4 class="text-lg font-semibold mb-4">Projects</h4>
               <div class="space-y-4">
                 <div class="border-l-4 border-primary pl-4 py-2">
@@ -51,7 +51,7 @@
             <!-- Technologies Used -->
             <div>
               <h4 class="text-lg font-semibold mt-8 mb-4">Technologies Used</h4>
-              <div class="flex flex-wrap gap-2" >
+              <div class="flex flex-wrap gap-2">
                 <span
                   v-for="skill in experienceDetails.skills"
                   :key="skill"
