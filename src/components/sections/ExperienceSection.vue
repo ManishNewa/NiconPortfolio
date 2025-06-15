@@ -63,10 +63,42 @@ const experiences = [
   {
     title: 'Digital Marketing Specialist',
     company: 'Care Global Surrey',
-    timeframe: '2023 - Present',
+    timeframe: 'Sep 2023 - Present',
     description:
       'Result-driven digital marketer with hands-on experience in managing social media, content creation, and paid advertising. Focused on building brand presence, driving engagement, and delivering measurable results across digital platforms.',
     skills: ['Social Media Management', 'Meta Suite', 'Content Creation'],
+  },
+  {
+    title: 'Creative Designer (Freelance)',
+    company: 'BAAN(Best Airlines Award Nepal)',
+    timeframe: 'Feb 2020 - Sep 2023',
+    description:
+      'Led creative advertising efforts by conceptualizing and designing impactful visual content using tools like Figma, After Effects, and Photoshop. Successfully managed social media accounts, particularly Facebook, ensuring effective and timely ad campaigns that aligned with brand goals.',
+    skills: ['Content Creation', 'After Effects', 'Video Editing', 'Graphics Design'],
+  },
+  {
+    title: 'Advertisement Advisor/ Graphic Designer (Freelance)',
+    company: 'Rohani Housing',
+    timeframe: 'Jan 2016 - Sep 2020',
+    description:
+      "Initiated the company's marketing efforts by creating original advertisement concepts and designing its first brand logo. Developed a range of promotional materials including banners, posters, and social media content, laying the foundation for a consistent and engaging marketing presence.",
+    skills: ['Logo Design', 'Banners Creation', 'Posters Design', 'Advertisements'],
+  },
+  {
+    title: 'Motion Graphics Designer',
+    company: 'Codavatar Tech Pvt Ltd',
+    timeframe: 'Sep 2020 - Jun 2023',
+    description:
+      'Produced high-quality videos, including motion graphics and content tailored for social media. Collaborated closely with the social media and UI/graphics teams to align visual storytelling with brand identity. Contributed to multiple SaaS products like KrispCall, Fenced.ai, MobileSpy, and timeTracko, enhancing their marketing impact through compelling motion design.',
+    skills: ['Animation', 'Video Editing', 'Graphics Design', 'Social Media Posts'],
+  },
+  {
+    title: 'Creative Graphics Designer',
+    company: 'Elscript Technologies',
+    timeframe: 'Oct 2021 - Sept 2022',
+    description:
+      'Transformed design briefs into impactful visuals by conceptualizing and executing creative ideas within set timelines and budgets. Produced illustrations, logos, and graphic assets using industry-standard software, collaborating with copywriters and creative directors to deliver on-brand, engaging final designs. Ensured quality through iterative feedback, consistently aligning visuals with project goals and brand identity.',
+    skills: ['Brochoure Design', 'Posters', 'Banners', 'Logos', 'Social Media Posts'],
   },
 ]
 </script>
