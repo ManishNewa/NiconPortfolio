@@ -12,6 +12,10 @@
   background-color: #3a86ff;
 }
 
+.bg-primary-20 {
+  background-color: rgba(58, 134, 255, 0.2);
+}
+
 .bg-secondary {
   background-color: #8338ec;
 }
