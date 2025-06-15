@@ -9,7 +9,10 @@
             <p id="modalExpCompany" class="text-primary">Creative Studio Inc.</p>
             <p id="modalExpDuration" class="text-gray-500 text-sm">2020 - Present</p>
           </div>
-          <button @click="emit('close-modal')" class="text-gray-500 hover:text-gray-700">
+          <button
+            @click="emit('close-modal')"
+            class="text-gray-500 hover:text-gray-700 cursor-pointer"
+          >
             <i class="fas fa-times text-xl"></i>
           </button>
         </div>
