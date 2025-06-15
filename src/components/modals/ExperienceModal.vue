@@ -2,22 +2,28 @@
   <!-- Experience Modal -->
   <div
     v-if="experienceDetails"
-    class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
   >
-    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-      <div class="p-6">
-        <div class="flex justify-between items-start mb-6">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" @click="closeExperienceModal"></div>
+    <!-- Modal content wrapper -->
+    <div class="relative z-10 w-full max-w-4xl">
+      <button
+        @click="closeExperienceModal"
+        class="cursor-pointer absolute top-4 right-4 backdrop-blur-sm p-2 rounded-full text-gray-800 hover:text-red-600 transition-colors z-20"
+      >
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <!-- Modal Content -->
+      <div
+        class="p-6 bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 animate-modal-in"
+      >
+        <div class="relative flex justify-between items-start mb-6">
           <div>
             <h3 class="text-2xl font-bold">{{ experienceDetails.title }}</h3>
             <p class="text-primary">{{ experienceDetails.company }}</p>
             <p class="text-gray-500 text-sm">{{ experienceDetails.timeframe }}</p>
           </div>
-          <button
-            @click="emit('close-modal')"
-            class="text-gray-500 hover:text-gray-700 cursor-pointer"
-          >
-            <i class="fas fa-times text-xl"></i>
-          </button>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -72,7 +78,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted, watchEffect } from 'vue'
 
 const emit = defineEmits(['close-modal'])
 const props = defineProps({
@@ -83,5 +89,21 @@ const props = defineProps({
 
 const experienceDetails = computed(() => {
   return props.experience
+})
+
+const closeExperienceModal = () => {
+  emit('close-modal')
+}
+
+onMounted(() => {
+  watchEffect(() => {
+    if (experienceDetails.value) {
+      document.body.style.overflow = 'hidden'
+    }
+  })
+})
+
+onUnmounted(() => {
+  document.body.style.overflow = ''
 })
 </script>
