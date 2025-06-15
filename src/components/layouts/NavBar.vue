@@ -10,22 +10,23 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#home" class="text-dark hover:text-primary transition">Home</a>
-          <a href="#skills" class="text-dark hover:text-primary transition">Skills</a>
-          <a href="#experience" class="text-dark hover:text-primary transition">Experience</a>
-          <a href="#projects" class="text-dark hover:text-primary transition">Projects</a>
-          <a href="#education" class="text-dark hover:text-primary transition">Education</a>
-          <a href="#achievements" class="text-dark hover:text-primary transition">Achievements</a>
           <a
-            href="#contact"
-            class="px-4 py-2 bg-primary text-white rounded-full hover:bg-secondary transition"
-            >Contact</a
+            v-for="link in links"
+            :key="link.href"
+            :href="link.href"
+            :class="
+              link.label == 'Contact'
+                ? 'px-4 py-2 bg-primary text-white rounded-full hover:bg-secondary transition'
+                : 'text-dark hover:text-primary'
+            "
+            class="transition"
+            >{{ link.label }}</a
           >
         </div>
 
         <!-- Mobile menu button -->
         <div class="md:hidden flex items-center">
-          <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+          <button @click="toggleMenu" class="text-dark hover:text-primary focus:outline-none">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 stroke-linecap="round"
@@ -40,50 +41,43 @@
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+    <div :class="{ hidden: isMenuHidden }" class="md:hidden bg-white shadow-lg">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
         <a
-          href="#home"
+          v-for="link in links"
+          :key="link.href"
+          :href="link.href"
           class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50"
-          >Home</a
+          @click="closeMenu"
         >
-        <a
-          href="#skills"
-          class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50"
-          >Skills</a
-        >
-        <a
-          href="#experience"
-          class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50"
-          >Experience</a
-        >
-        <a
-          href="#projects"
-          class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50"
-          >Projects</a
-        >
-        <a
-          href="#education"
-          class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50"
-          >Education</a
-        >
-        <a
-          href="#achievements"
-          class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-gray-50"
-          >Achievements</a
-        >
-        <a
-          href="#contact"
-          class="block px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-secondary"
-          >Contact</a
-        >
+          {{ link.label }}
+        </a>
       </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+
+const isMenuHidden = ref(true)
+const links = [
+  { href: '#home', label: 'Home' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#education', label: 'Education' },
+  { href: '#achievements', label: 'Achievements' },
+  { href: '#contact', label: 'Contact' },
+]
+
+const toggleMenu = () => {
+  isMenuHidden.value = !isMenuHidden.value
+}
+
+const closeMenu = () => {
+  isMenuHidden.value = true
+}
 
 onMounted(() => {
   const anchors = document.querySelectorAll('a[href^="#"]')
@@ -97,7 +91,7 @@ onMounted(() => {
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // Adjust offset if you have a fixed header
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth',
         })
       }
