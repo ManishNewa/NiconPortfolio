@@ -27,7 +27,7 @@
             <span
               v-for="innerSkill in skill.innerSkills"
               :key="innerSkill"
-              class="skill-pill bg-primary/10 text-primary px-3 py-1 rounded-full text-sm transition"
+              class="skill-pill bg-primary-10 text-primary px-3 py-1 rounded-full text-sm transition"
               >{{ innerSkill }}
             </span>
           </div>
