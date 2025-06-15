@@ -42,9 +42,12 @@
             <div v-if="experienceDetails.projects && experienceDetails.projects.length">
               <h4 class="text-lg font-semibold mb-4">Projects</h4>
               <div class="space-y-4">
-                <div class="border-l-4 border-primary pl-4 py-2">
-                  <h5 class="font-medium">Brand Animation</h5>
-                  <p class="text-sm text-gray-600">Tech Company X</p>
+                <div
+                  v-for="project in experienceDetails.projects"
+                  :key="project"
+                  class="border-l-4 border-primary pl-4 py-2"
+                >
+                  <h5 class="font-medium">{{ project }}</h5>
                 </div>
               </div>
             </div>
