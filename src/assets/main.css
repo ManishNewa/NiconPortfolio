@@ -16,6 +16,10 @@
   background-color: rgba(58, 134, 255, 0.2);
 }
 
+.bg-primary-10 {
+  background-color: rgba(58, 134, 255, 0.1);
+}
+
 .bg-secondary {
   background-color: #8338ec;
 }
