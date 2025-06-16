@@ -13,7 +13,7 @@
 
       <!-- Modal Content -->
       <div
-        class="p-6 bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 animate-modal-in"
+        class="p-0 bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 animate-modal-in"
       >
         <slot> </slot>
       </div>
